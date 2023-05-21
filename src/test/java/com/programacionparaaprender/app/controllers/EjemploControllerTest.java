@@ -24,7 +24,7 @@ import com.programacionparaaprender.app.service.EjemploService;
 @SpringBootTest
 @AutoConfigureWebTestClient(timeout = "20000")
 @ExtendWith(MockitoExtension.class)
-public class EjemploControllerTest {
+class EjemploControllerTest {
     
     @MockBean
     EjemploService ejemploService;
@@ -63,7 +63,7 @@ public class EjemploControllerTest {
 
     
 
-    @Order(3)
+    @Order(2)
     @Test
     void indexPostTest() {
         String port="8080";
@@ -83,6 +83,7 @@ public class EjemploControllerTest {
             .isEqualTo(ejemploResp);
     }
 
+    @Order(3)
     @Test
     void indexGetDatosTest() {
         String datos;

@@ -2,6 +2,7 @@ package com.programacionparaaprender.app.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,9 +29,9 @@ public class EjemploController {
     	return Mono.justOrEmpty(this.ejemploService.get("puerto: " + port + " username: " + username));
     }
 
-    @GetMapping("{datos}")
-    public Mono<EjemploResponse> indexGetData(String datos) {
-    	return Mono.justOrEmpty(this.ejemploService.get(datos));
+    @GetMapping("/{id}")
+    public Mono<EjemploResponse> indexGetData(@PathVariable("id") String id) {
+    	return Mono.justOrEmpty(this.ejemploService.get(id));
     }
 
     @PostMapping
