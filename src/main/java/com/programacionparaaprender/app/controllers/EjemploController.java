@@ -21,18 +21,16 @@ public class EjemploController {
 	@Autowired
 	private EjemploService ejemploService;
 	
-	
-	@GetMapping("/metodoPrueba")
-    public Mono<EjemploResponse> metodoPrueba(String port) {
-  
-    	return Mono.justOrEmpty(this.ejemploService.metodoPrueba(port));
-    }
-
     @GetMapping
     public Mono<EjemploResponse> indexGet() {
     	String port="8080";
 		String username="sa";
     	return Mono.justOrEmpty(this.ejemploService.get("puerto: " + port + " username: " + username));
+    }
+
+    @GetMapping("{datos}")
+    public Mono<EjemploResponse> indexGetData(String datos) {
+    	return Mono.justOrEmpty(this.ejemploService.get(datos));
     }
 
     @PostMapping

@@ -22,24 +22,12 @@ public class WebClientConfig{
 	@Bean("webClientEjemplo")
 	public WebClient webClient() {
 		return WebClient.builder()
-				//.clientConnector(connector())
-				.exchangeStrategies(strategie())
-				.filter(errorHandlingFilter())
+				.clientConnector(conector())
+				.exchangeStrategies(estrategia())
 				.build();
 	}
 
-
-	private static ExchangeFilterFunction errorHandlingFilter() {
-		return ExchangeFilterFunction.ofResponseProcessor(clientResponse -> {
-			if (clientResponse.statusCode().isError()) {
-				return clientResponse.createException().flatMap(Mono::error);
-			} else {
-				return Mono.just(clientResponse);
-			}
-		});
-	}
-
-	/* private static ClientHttpConnector connector() {
+private static ClientHttpConnector conector() {
 		return new ReactorClientHttpConnector(httpClient());
 	}
 
@@ -49,9 +37,9 @@ public class WebClientConfig{
 				.doOnConnected(conn -> conn
 						.addHandler(new ReadTimeoutHandler(14, TimeUnit.SECONDS))
 						.addHandler(new WriteTimeoutHandler(14, TimeUnit.SECONDS)));
-	} */
+	} 
 
-	private static ExchangeStrategies strategie() {
+	private static ExchangeStrategies estrategia() {
 		return ExchangeStrategies.builder()
 				.codecs(configurer -> configurer
 						.defaultCodecs()
