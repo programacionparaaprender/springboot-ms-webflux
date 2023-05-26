@@ -1,26 +1,15 @@
 package com.programacionparaaprender.app.service.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.programacionparaaprender.app.model.response.EjemploResponse;
-import com.programacionparaaprender.app.service.impl.EjemploServiceImpl;
 
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 @ExtendWith(MockitoExtension.class)
 class EjemploServiceImplTest {
