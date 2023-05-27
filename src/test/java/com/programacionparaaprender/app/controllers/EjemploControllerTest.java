@@ -10,7 +10,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,7 +20,6 @@ import com.programacionparaaprender.app.model.request.EjemploRequest;
 import com.programacionparaaprender.app.model.response.EjemploResponse;
 import com.programacionparaaprender.app.service.EjemploService;
 
-@SpringBootTest
 @AutoConfigureWebTestClient(timeout = "20000")
 @ExtendWith(MockitoExtension.class)
 class EjemploControllerTest {
@@ -36,7 +34,7 @@ class EjemploControllerTest {
     public static void setUp() {
 
     }
-/*    
+/* 
     @Order(1)
     @Test
     void indexGetTest() {

@@ -15,8 +15,8 @@ import java.util.List;
 
 
 @RestController
-//@RequestMapping("/tio") //localhost:8080/usuarios
-@RequestMapping("/ejemplo/v1/ejemplo")
+@RequestMapping("/tio") //localhost:8080/usuarios
+//@RequestMapping("/ejemplo/v1/ejemplo")
 @CrossOrigin
 @Controller
 public class TioController {
