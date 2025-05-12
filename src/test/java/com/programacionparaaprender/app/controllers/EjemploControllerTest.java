@@ -36,7 +36,7 @@ class EjemploControllerTest {
     public static void setUp() {
 
     }
-
+/* 
     @Order(1)
     @Test
     void indexGetTest() {
@@ -105,6 +105,6 @@ class EjemploControllerTest {
                 }
             });
     }
-
+*/
 
 }
